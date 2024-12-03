@@ -3,31 +3,14 @@ import = [
 ]
 
 [window]
-dimensions = { columns = 110, lines = 31 }
+dimensions = { columns = 110, lines = 36 }
 
 [font]
-size = 14.0
+size = 16.0
 
 [font.normal]
 #family = "ProFont for Powerline"
 #family = "Hack"
-family = "Source Code Pro for Powerline"
+#family = "Source Code Pro for Powerline"
+family = "Agave Nerd Font" 
 style = "Regular"
-
-[font.bold]
-#family = "ProFont for Powerline"
-#family = "Hack"
-family = "Source Code Pro for Powerline"
-style = "Bold"
-
-[font.italic]
-#family = "ProFont for Powerline"
-#family = "Hack"
-family = "Source Code Pro for Powerline"
-style = "Italic"
-
-[font.bold_italic]
-#family = "ProFont for Powerline"
-#family = "Hack"
-family = "Source Code Pro for Powerline"
-style = "Bold Italic"
