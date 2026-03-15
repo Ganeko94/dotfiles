@@ -1,7 +1,7 @@
 # Enable the subsequent settings only in interactive sessions
 case $- in
-  *i*) ;;
-    *) return;;
+*i*) ;;
+*) return ;;
 esac
 
 # Path to your oh-my-bash installation.
@@ -144,12 +144,17 @@ source "$OSH"/oh-my-bash.sh
 # alias ohmybash="mate ~/.oh-my-bash"
 alias ssh='TERM=xterm-256color ssh'
 alias lg='lazygit'
+alias lzd='lazydocker'
+alias docker-compose='docker compose'
 alias docker-pps='docker-pretty-ps'
 alias docker-ppsa='docker-pretty-ps -a'
+alias python='python3'
+alias ll="ls -l --time-style='+%d-%m-%Y'"
+alias la="ls -la --time-style='+%d-%m-%Y'"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 . "$HOME/.cargo/env"
 
 # Add GO bin folder to PATH
@@ -158,8 +163,12 @@ export GOBIN=${GOBIN:-$(go env GOPATH)/bin}
 
 # Powerline fonts
 if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
-    source /usr/share/powerline/bindings/bash/powerline.sh
+  source /usr/share/powerline/bindings/bash/powerline.sh
 fi
+
+# Ranger default editor
+export EDITOR=/usr/local/bin/nvim
+export VISUAL=/usr/local/bin/nvim
 
 fastfetch
 source ~/.bash_completion/alacritty

@@ -1,6 +1,11 @@
+gui:
+  theme:
+    selectedLineBgColor:
+      - red
+
 customCommands:
   - key: 'O'
-    context: 'status, files, worktrees, submodules'
+    context: 'status, files, worktrees, submodules, localBranches'
     command: 'git-open {{.Form.Branch}}'
     description: 'Open current repository on the browser'
     prompts:
@@ -14,11 +19,21 @@ customCommands:
           - name: 'current branch'
             description: 'Open repository in current branch'
             value: ''
+  - key: 'U'
+    context: 'status, files, worktrees, submodules, localBranches'
+    command: 'git submodule update --init --recursive'
+    description: 'Update submodules (init & recursive)'
   - key: 'C'
-    context: 'status'
+    #context: 'status'
+    context: 'status, files, worktrees, submodules, localBranches'
     command: 'code .'
     description: 'Open current local repository on Visual Studio Code'
   - key: 'F'
-    context: 'status'
+    #context: 'status'
+    context: 'status, files, worktrees, submodules, localBranches'
     command: 'nautilus .'
     description: 'Open current local repository on File Explorer'
+  - key: 'f'
+    context: 'status, localBranches'
+    command: 'git fetch'
+    description: 'Fetch (prune)'
